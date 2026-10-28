@@ -9,7 +9,7 @@ It's a monorepo so the tools share one core (standalone-node driver, typed state
 | Package | What it does | Status |
 |---|---|---|
 | [`xrpl-lint`](packages/xrpl-lint) | Static linter for XRPL transactions — catches footguns before you sign/submit (no node needed). | **v0.0.1** |
-| `xrpl-explain` | "Why did this fail" + typed before/after state diff (MPT/Vault/Loan aware). | planned |
+| [`xrpl-explain`](packages/xrpl-explain) | Explain a tx result + a typed before/after state diff (type-agnostic; MPT/Vault/Loan included). | **v0.0.1** |
 | `xrpl-fuzz` | Stateful invariant fuzzer — random tx sequences vs user-defined invariants, shrunk to a minimal repro. | planned |
 | `xrpl-harness-core` | Shared node driver, decoder, invariant engine, ddmin (extracted from the Nullsum harness). | planned |
 

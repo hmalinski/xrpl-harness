@@ -6,11 +6,14 @@ on:
   pull_request:
 
 jobs:
-  xrpl-lint:
+  pytest:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: [xrpl-lint, xrpl-explain]
     defaults:
       run:
-        working-directory: packages/xrpl-lint
+        working-directory: packages/${{ matrix.package }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

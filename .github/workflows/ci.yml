@@ -1,0 +1,22 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  xrpl-lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/xrpl-lint
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install (with dev deps)
+        run: pip install -e ".[dev]"
+      - name: Run tests
+        run: pytest -q

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xrpl-lint"
+version = "0.0.1"
+description = "Static linter for XRP Ledger transactions — catch footguns before you sign or submit."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Harry Malinski" }]
+keywords = ["xrpl", "rippled", "xrp-ledger", "linter", "static-analysis"]
+dependencies = []
+
+[project.scripts]
+xrpl-lint = "xrpl_lint.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["xrpl_lint*"]
